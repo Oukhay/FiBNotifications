@@ -10,7 +10,7 @@
             "email": "hamedoukhay@gmail.com"
         }
     ],
-    "minimum-stability": "dev-master",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Oukhay\\FiBNotifications\\": "src/"
