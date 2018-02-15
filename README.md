@@ -48,7 +48,6 @@ Add the facade aliases in the same file:
 ```php
 'aliases' => [
 	...
-	'FCM'      => LaravelFCM\Facades\FCM::class,
 	'FiBNotifications' => Oukhay\FiBNotifications\Facade\FiBNotification::class
 ]
 ```
