@@ -6,7 +6,7 @@
 
 FiBNotifications is an easy to use Laravel package to sending push notification with [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) (FCM).
 
-It provide an API to :
+It provides an API to :
 
 - Register new device
 - Send notification to single device
@@ -66,6 +66,12 @@ This command will generate a config file **main.php** under **/config/fib-notifi
 To create the necessary table **fib_devices** run the following command :
 
     $ php artisan migrate
+    
+    
+## Basic Usage
+
+...
+
 
 
 ## API Documentation
