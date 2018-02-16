@@ -31,12 +31,7 @@ class TestFiBNotifications extends TestCase
     }
     
     
-    public function testSendOneNotificationToSingleDevice()
-    {
 
-        $this->assertTrue(true);
-    }
-    
     
 
     public function testSendNotificationToMultipleDevices()

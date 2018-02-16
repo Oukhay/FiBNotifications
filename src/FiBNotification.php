@@ -16,7 +16,7 @@ class FiBNotification
 {
 
     // send one notification
-    public function sendNotification(FiBNotificationBuilder $notificationBody){
+    public function sendNotification($notificationBody){
         $headers = $this->createHeaders();
 
         $httpClient = new HttpClient();
@@ -28,7 +28,7 @@ class FiBNotification
 
 
    // send multiple notifications
-    public function sendNotificationsToMultipleDevices(FiBNotificationBuilder $notificationBody){
+    public function sendNotificationsToMultipleDevices($notificationBody){
         $headers = $this->createHeaders();
 
         $httpClient = new HttpClient();

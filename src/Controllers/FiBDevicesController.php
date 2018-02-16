@@ -43,7 +43,5 @@ class FiBDevicesController extends BaseController
         $device = $this->deviceRepository->registerNewDevice($token,$userId);
 
         return $device;
-
-
     }
 }
