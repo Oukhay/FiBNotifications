@@ -15,7 +15,8 @@ class CreateFiBNotificationsFibnDevicesTable extends Migration
         Schema::create('fibn_devices', function(Blueprint $t)
         {
             $t->increments('id')->unsigned();
-            $t->text('token', 255);
+            $t->text('token');
+            $t->string('device_status', 255);
             $t->integer('user_id');
             $t->timestamps();
         });

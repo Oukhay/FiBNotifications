@@ -11,27 +11,39 @@ use Illuminate\Routing\Controller as BaseController;
 use Oukhay\FiBNotifications\FiBNotificationBuilder;
 use Illuminate\Support\Facades\Validator;
 use Oukhay\FiBNotifications\Models\Device;
-
+use Oukhay\FiBNotifications\Repositories\DeviceRepository;
 
 class FiBDevicesController extends BaseController
 {
 
 
+    /**
+     * FiBDevicesController constructor.
+     */
+    protected $deviceRepository;
+
+    public function __construct(DeviceRepository $deviceRepository)
+    {
+        $this->deviceRepository = $deviceRepository;
+    }
+
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(),  [
-            'token'             => 'required',
+            'token'            => 'required',
             'user_id'          => 'required|numeric'
         ]);
 
         if ($validator->fails()) {
             return $validator->errors();
         }
-        $device =  new Device();
-        $device->token = $request->get("token");
-        $device->user_id = $request->get("user_id");
-        $device->save();
+        $token  = $request->get('token');
+        $userId = $request->get('user_id');
+
+        $device = $this->deviceRepository->registerNewDevice($token,$userId);
+
         return $device;
+
 
     }
 }

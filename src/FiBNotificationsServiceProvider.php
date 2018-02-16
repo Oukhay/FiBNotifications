@@ -3,6 +3,7 @@
 namespace Oukhay\FiBNotifications;
 
 use Illuminate\Support\ServiceProvider;
+use Oukhay\FiBNotifications\Repositories\DeviceRepository;
 
 class FiBNotificationsServiceProvider extends ServiceProvider
 {
@@ -34,6 +35,9 @@ class FiBNotificationsServiceProvider extends ServiceProvider
         );
         $this->app->bind('fib-notifications', function() {
             return new FiBNotification;
+        });
+        $this->app->bind('deviceRepository', function() {
+            return new DeviceRepository;
         });
     }
 }

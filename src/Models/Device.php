@@ -12,6 +12,7 @@ class Device extends  Model
     protected $table = 'fibn_devices';
     protected $fillable = [
         'token',
+        'device_status',
         'user_id'
     ];
 }
